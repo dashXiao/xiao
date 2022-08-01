@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Orders : NSObject
 @property(nonatomic) NSString* orderid;
-@property(nonatomic) NSDate* ordertime;
+@property(nonatomic) NSString* ordertime;
 @property(nonatomic) CGFloat price;
 
 - (void) setOrder:(NSString *)orderid ordertime:(NSString *)ordertime price:(CGFloat)price;
-- (void) print;
+- (void) printod;
 @end
 
 @interface Passenger : Person
@@ -34,7 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) makeOrders:(Orders*)od;
 // 去检票
 - (void) check:(Orders*)od;
-
+//查看未出行订单
+- (void) printFuture:(NSMutableArray*)array;
+//查看历史订单
+- (void) printHistory:(NSMutableArray*)array;
 @end
 
 NS_ASSUME_NONNULL_END
+
